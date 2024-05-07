@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Bill</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Generated Bill</h1>
+        <h2>Selected Items</h2>
+        <ul class="list-group">
+            {% for product in selected_products %}
+                <li class="list-group-item">{{ product.name }} - ${{ product.price }}</li>
+            {% endfor %}
+        </ul>
+        <h2 class="mt-4">Total Cost: ${{ total_cost }}</h2>
+        <a href="{% url 'select_items' %}" class="btn btn-primary mt-4">Back to Select Items</a>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (Optional) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>
